@@ -1,0 +1,88 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+.Whole-Page{
+    height:100vh;
+    width:100%;
+    background-image:linear-gradient(#2ddca0, #179992);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Whole-Page .content-Wrapper{
+    position: relative;
+    height:410px;
+    width:330px;
+}
+.Flipping-card{
+    border-radius: 10px;
+    border:2px solid #fff;
+    background-color: #fff;
+    height: 100%;
+    width:100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.content-Wrapper .Front-Side{
+    width: 100%;
+}
+.content-Wrapper .Front-Side img{
+    padding: 5px;
+    width:100%;
+    height:405px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.content-Wrapper .Back-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:0 40px;
+    transform: rotateY(180deg);
+}
+.content-Wrapper .Back-side img{
+    border-radius: 50%;
+    object-fit: cover;
+    padding:5px;
+    background-image:linear-gradient(#2ddca0, #179992);
+}
+.content-Wrapper .Back-side h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 10px;
+}
+.content-Wrapper .Back-side p{
+    font-size: 1.1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: 100;
+    padding:0 10px 30px 10px;   
+}
+.Back-side .social-media-links i{
+    background-image: linear-gradient( #2ddca0, #179992 );
+    font-size: 1.5rem;
+    padding:10px;
+    border-radius: 50px;
+    color:#fff;
+    margin:5px;
+    box-shadow: 0 0 3px #777;
+}
+.Flipping-card{
+    transition: all 0.5s linear;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+.Front-Side{position: absolute;}
+.Back-side{position: absolute;}
+.content-Wrapper{
+    perspective: 1000px;
+}
+.content-Wrapper:hover .Back-side{
+    transform: rotateY(0deg);
+}
+.content-Wrapper:hover .Front-Side{
+    transform: rotateY(-180deg);
+}
